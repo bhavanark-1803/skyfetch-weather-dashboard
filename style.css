@@ -84,3 +84,107 @@ h1 {
   width: 100px;
   height: 100px;
 }
+.search-section {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px; /* space between input and button */
+  flex-wrap: wrap; /* makes it responsive on small screens */
+}
+
+/* Style the city input field */
+#city-input {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  flex: 1; /* take up available space */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#city-input:focus {
+  border-color: #4a90e2; /* change color on focus */
+}
+
+/* Style the search button */
+#search-btn {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #4a90e2, #50e3c2); /* gradient example */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+#search-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Optional: Adjust input/button on smaller screens */
+@media (max-width: 500px) {
+  .search-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+}
+
+/* Style the error message */
+.error-message {
+  background-color: #ffe6e6; /* light red/pink background */
+  color: #d8000c; /* dark red text */
+  padding: 15px 20px;
+  border-radius: 12px;
+  border-left: 6px solid #d8000c; /* thick left border */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+/* Optional: style inner icon/emoji */
+.error-message span {
+  font-size: 1.5rem; /* makes emoji slightly bigger */
+}
+/* Style the spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* light gray background */
+  border-top: 5px solid #667eea; /* theme color */
+  border-radius: 50%; /* makes it circular */
+  animation: spin 1s linear infinite; /* apply rotation animation */
+}
+
+/* Keyframes for spinner rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style the loading container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* space between spinner and text */
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
